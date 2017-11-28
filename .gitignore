@@ -6,4 +6,6 @@ __pycache__
 .sass-cache
 styles.css.map
 
+*.db
+
 restaurant/*

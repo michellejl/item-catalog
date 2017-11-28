@@ -2,42 +2,42 @@ from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 # Fake Data (TEMP)
-category = {'name': 'Dev Tools', 'id': '1'}
-categories = [
-  {'name': 'Dev Tools', 'id': '1'},
-  {'name': 'IDEs', 'id': '2'},
-  {'name': 'Documents', 'id': '3'},
-]
-item = {
-    'name': 'Transmit',
-    'description': 'this is an app',
-    'image_url': 'transmit.png',
-    'website': 'https://panic.com/transmit/',
-    'id': '1'
-  }
-items = [
-  {
-    'name': 'Transmit',
-    'description': 'this is an app',
-    'image_url': 'transmit.png',
-    'website': 'https://panic.com/transmit/',
-    'id': '1'
-  },
-  {
-    'name': 'PyCharm',
-    'description': 'this is also an app',
-    'image_url': 'pycharm.png',
-    'website': 'https://www.jetbrains.com/pycharm/',
-    'id': '2'
-  },
-  {
-    'name': 'webstorm',
-    'description': 'yet another app. yay',
-    'image_url': 'webstorm.png',
-    'website': 'https://www.jetbrains.com/webstorm/',
-    'id': '3'
-  }
-]
+# category = {'name': 'Dev Tools', 'id': '1'}
+# categories = [
+#   {'name': 'Dev Tools', 'id': '1'},
+#   {'name': 'IDEs', 'id': '2'},
+#   {'name': 'Documents', 'id': '3'},
+# ]
+# item = {
+#     'name': 'Transmit',
+#     'description': 'this is an app',
+#     'image_url': 'transmit.png',
+#     'website': 'https://panic.com/transmit/',
+#     'id': '1'
+#   }
+# items = [
+#   {
+#     'name': 'Transmit',
+#     'description': 'this is an app',
+#     'image_url': 'transmit.png',
+#     'website': 'https://panic.com/transmit/',
+#     'id': '1'
+#   },
+#   {
+#     'name': 'PyCharm',
+#     'description': 'this is also an app',
+#     'image_url': 'pycharm.png',
+#     'website': 'https://www.jetbrains.com/pycharm/',
+#     'id': '2'
+#   },
+#   {
+#     'name': 'webstorm',
+#     'description': 'yet another app. yay',
+#     'image_url': 'webstorm.png',
+#     'website': 'https://www.jetbrains.com/webstorm/',
+#     'id': '3'
+#   }
+# ]
 
 
 @app.route('/')

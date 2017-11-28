@@ -56,7 +56,7 @@ session.commit()
 
 item5 = Item(
   name = "GitKraken",
-  description = "The legendary Git GUI client for Windows, Mac and Linux. GitKraken now offers Git novices and pros a consistent experience across Mac, Windows and Linux. And makes Git operations not only performant and efficient, but understandable, visual, and perhaps even just a little bit…fun!",
+  description = "The legendary Git GUI client for Windows, Mac and Linux. GitKraken now offers Git novices and pros a consistent experience across Mac, Windows and Linux. And makes Git operations not only performant and efficient, but understandable, visual, and perhaps even just a little bit...fun!",
   image_url = "gitkraken.png",
   website = "https://www.gitkraken.com/",
   category = category1
@@ -86,7 +86,7 @@ session.commit()
 
 item8 = Item(
   name = "Transmit",
-  description = "The gold standard of macOS file transfer apps just drove into the future. Transmit 5 is here. Upload, download, and manage files on tons of servers with an easy, familiar, and powerful UI. It’s quite good.",
+  description = "The gold standard of macOS file transfer apps just drove into the future. Transmit 5 is here. Upload, download, and manage files on tons of servers with an easy, familiar, and powerful UI. It's quite good.",
   image_url = "transmit.png",
   website = "https://panic.com/transmit/",
   category = category1
@@ -109,7 +109,7 @@ session.commit()
 
 item10 = Item(
   name = "Atom",
-  description = "Atom is a text editor that's modern, approachable, yet hackable to the core—a tool you can customize to do anything but also use productively without ever touching a config file.",
+  description = "Atom is a text editor that's modern, approachable, yet hackable to the core-a tool you can customize to do anything but also use productively without ever touching a config file.",
   image_url = "atom.png",
   website = "https://atom.io/",
   category = category2
@@ -122,14 +122,14 @@ item11 = Item(
   description = "PyCharm is a Python IDE for Professional Developers created by JetBrains. PyCharm knows everything about your code. Rely on it for intelligent code completion, on-the-fly error checking and quick-fixes, easy project navigation, and much more.",
   image_url = "pycharm.png",
   website = "https://www.jetbrains.com/pycharm/",
-  category = category3
+  category = category2
 )
 session.add(item11)
 session.commit()
 
 item12 = Item(
   name = "WebStorm",
-  description = "Use the full power of the modern JavaScript ecosystem – WebStorm’s got you covered! Enjoy the intelligent code completion, on-the-fly error detection, powerful navigation and refactoring for JavaScript, TypeScript, stylesheet languages, and the most popular frameworks.",
+  description = "Use the full power of the modern JavaScript ecosystem - WebStorm's got you covered! Enjoy the intelligent code completion, on-the-fly error detection, powerful navigation and refactoring for JavaScript, TypeScript, stylesheet languages, and the most popular frameworks.",
   image_url = "webstorm.png",
   website = "https://www.jetbrains.com/webstorm/",
   category = category2
@@ -267,7 +267,7 @@ session.commit()
 
 item25 = Item(
   name = "Calibre",
-  description = "calibre is a powerful and easy to use e-book manager. Users say it’s outstanding and a must-have. It’ll allow you to do nearly everything and it takes things a step beyond normal e-book software. It’s also completely free and open source and great for both casual users and computer experts. ",
+  description = "calibre is a powerful and easy to use e-book manager. Users say it's outstanding and a must-have. It'll allow you to do nearly everything and it takes things a step beyond normal e-book software. It's also completely free and open source and great for both casual users and computer experts. ",
   image_url = "calibre.png",
   website = "https://calibre-ebook.com/download",
   category = category4
@@ -281,7 +281,7 @@ category5 = Category(name="Graphics and Photo Editors")
 
 item26 = Item(
   name = "Sketch",
-  description = "Sketch is a design toolkit built to help you create your best work — from your earliest ideas, through to final artwork.",
+  description = "Sketch is a design toolkit built to help you create your best work - from your earliest ideas, through to final artwork.",
   image_url = "sktech.jpg",
   website = "https://www.sketchapp.com/",
   category = category5
@@ -305,7 +305,7 @@ category6 = Category(name="Date and Do Things Trackers")
 
 item28 = Item(
   name = "2Do",
-  description = "2Do’s simplistic appearance is only skin deep. It can be a simple to-do list, helping you in staying on top of your daily chores, or a full-featured GTD tool for heavy taskers. It houses an incredibly powerful productivity-aware engine, and can be as fierce as your workflow.",
+  description = "2Do's simplistic appearance is only skin deep. It can be a simple to-do list, helping you in staying on top of your daily chores, or a full-featured GTD tool for heavy taskers. It houses an incredibly powerful productivity-aware engine, and can be as fierce as your workflow.",
   image_url = "2do.png",
   website = "https://www.2doapp.com/",
   category = category6
