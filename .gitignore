@@ -3,4 +3,7 @@ __pycache__
 .vagrant
 .DS_Store
 
+.sass-cache
+styles.css.map
+
 restaurant/*
