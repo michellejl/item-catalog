@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <title>Item</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+  <h1>Michelle's Favorite Apps and Software</h1>
+
+  <a href="{{url_for('showCategories')}}">View all categories</a>
+  <br />
+  <a href="{{url_for('showItemsList', category_id = category.id)}}">Back to Item List</a>
+
+ <h3>{{item.name}}</h3>
+ <img src="/static/images/{{item.image_url}}" />
+ <p>{{item.description}}</p>
+ <p><a href="{{item.website}}">Website</a></p>
+
+
+</body>
+</html>

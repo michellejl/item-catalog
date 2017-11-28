@@ -8,6 +8,13 @@ categories = [
   {'name': 'IDEs', 'id': '2'},
   {'name': 'Documents', 'id': '3'},
 ]
+item = {
+    'name': 'Transmit',
+    'description': 'this is an app',
+    'image_url': 'transmit.png',
+    'website': 'https://panic.com/transmit/',
+    'id': '1'
+  }
 items = [
   {
     'name': 'Transmit',
@@ -57,17 +64,28 @@ def newCategory():
   else:
     return render_template('newcategory.html')
 
-@app.route('/category/<int:category_id>/edit')
+@app.route('/category/<int:category_id>/edit', methods=['GET', 'POST'])
 def editCategory(category_id):
-  return "Edit Category"
+  if request.method == 'POST':
+    # editCategory = Category(name=request.form['name'])
+    # session.add(newCategory)
+    # session.commit()
+    return redirect(url_for('showCategories'))
+  else:
+    return render_template('editcategory.html', category=category)
 
 @app.route('/category/<int:category_id>/delete')
 def deleteCategory(category_id):
-  return "Delete Category"
+  if request.method == 'POST':
+    return redirect(url_for('showCategories'))
+  else:
+    return render_template('deletecategory.html', category=category)
 
 @app.route('/category/<int:category_id>/item/<int:item_id>')
 def itemDetails(category_id, item_id):
-  return "Item Details"
+  return render_template(
+    'item.html', category=category, item=item
+  )
 
 @app.route('/category/<int:category_id>/item/new')
 def newItem(category_id):

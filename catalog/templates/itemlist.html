@@ -16,6 +16,8 @@
   <h2>{{category.name}}</h2>
 
   <a href="{{url_for('showCategories')}}">View all categories</a>
+  <br />
+  <a href="{{url_for('newItem', category_id = category.id)}}">Add new item</a>
 
   {% for item in items %}
   
