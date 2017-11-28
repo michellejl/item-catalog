@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+    <title>Edit a Cateogry</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+  <h1>Michelle's Favorite Apps and Software</h1>
+
+  <a href="{{url_for('showItemsList', category_id = category.id)}}">Back to Items List</a>
+
+  <form action="#" method = 'post'>
+    <p>Edit Item Name:</p>
+    <input type ='text' size='30' name='name' placeholder="{{item.name}}">
+    <input type='submit' value='Create'>
+  </form>
+
+</body>
+</html>
