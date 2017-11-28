@@ -1,55 +1,31 @@
 from flask import Flask, render_template, request, redirect
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from database_setup import Base, Category, Item
+
 app = Flask(__name__)
 
-# Fake Data (TEMP)
-# category = {'name': 'Dev Tools', 'id': '1'}
-# categories = [
-#   {'name': 'Dev Tools', 'id': '1'},
-#   {'name': 'IDEs', 'id': '2'},
-#   {'name': 'Documents', 'id': '3'},
-# ]
-# item = {
-#     'name': 'Transmit',
-#     'description': 'this is an app',
-#     'image_url': 'transmit.png',
-#     'website': 'https://panic.com/transmit/',
-#     'id': '1'
-#   }
-# items = [
-#   {
-#     'name': 'Transmit',
-#     'description': 'this is an app',
-#     'image_url': 'transmit.png',
-#     'website': 'https://panic.com/transmit/',
-#     'id': '1'
-#   },
-#   {
-#     'name': 'PyCharm',
-#     'description': 'this is also an app',
-#     'image_url': 'pycharm.png',
-#     'website': 'https://www.jetbrains.com/pycharm/',
-#     'id': '2'
-#   },
-#   {
-#     'name': 'webstorm',
-#     'description': 'yet another app. yay',
-#     'image_url': 'webstorm.png',
-#     'website': 'https://www.jetbrains.com/webstorm/',
-#     'id': '3'
-#   }
-# ]
+engine = create_engine('sqlite:///categoryitems.db')
+Base.metadata.bind = engine
 
+DBSession = sessionmaker(bind=engine)
+session = DBSession()
 
+# View all Categories
 @app.route('/')
 @app.route('/categories')
 def showCategories():
+  categories = session.query(Category).all()
   return render_template(
     'categories.html', categories=categories
   )
 
+# View all Items in a Specified Category
 @app.route('/category/<int:category_id>')
 @app.route('/category/<int:category_id>/items')
 def showItemsList(category_id):
+  category = session.query(Category).filter_by(id=category_id).one()
+  items = session.query(Item).filter_by(category_id=category_id).all()
   return render_template(
     'itemlist.html', category=category, items=items
   )
@@ -57,9 +33,6 @@ def showItemsList(category_id):
 @app.route('/category/new', methods=['GET', 'POST'])
 def newCategory():
   if request.method == 'POST':
-    newCategory = Category(name=request.form['name'])
-    session.add(newCategory)
-    session.commit()
     return redirect(url_for('showCategories'))
   else:
     return render_template('newcategory.html')
@@ -78,8 +51,11 @@ def deleteCategory(category_id):
   else:
     return render_template('deletecategory.html', category=category)
 
+# View details of a selected item
 @app.route('/category/<int:category_id>/item/<int:item_id>')
 def itemDetails(category_id, item_id):
+  category = session.query(Category).filter_by(id=category_id).one()
+  item = session.query(Item).filter_by(id=item_id).one()
   return render_template(
     'item.html', category=category, item=item
   )
