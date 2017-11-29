@@ -32,6 +32,7 @@ class Item(Base):
             'id': self.id,
             'image_url': self.image_url,
             'website': self.website,
+            'category_id': self.category_id
         }
 
 
